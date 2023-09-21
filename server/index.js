@@ -1,6 +1,12 @@
 const express = require('express');
 const app = express();
 const routes = require('./src/routes/routes.js');
+const cors = require('cors');
+const { v4: uuidv4 } = require('uuid');
+require('dotenv').config();
+
+const allowedOrigins = [process.env.REACT_APP_PORT, process.env.REACT_APP_URL];
+
 const http = require('http').createServer(app);
 const io = require('socket.io')(http, {
   cors: {
@@ -8,14 +14,6 @@ const io = require('socket.io')(http, {
     methods: ["GET", "POST"]
   }
 });
-
-
-const cors = require('cors');
-const { v4: uuidv4 } = require('uuid');
-require('dotenv').config();
-
-const allowedOrigins = [process.env.REACT_APP_PORT, process.env.REACT_APP_URL];
-
 
 app.use(cors({
   origin: function (origin, callback) {
@@ -29,9 +27,9 @@ app.use(cors({
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
 }));
 
-
 app.use(express.json());
 app.use('/api', routes);
+
 // Initialize codeSessions and codeBlockStatus maps
 const codeSessions = {};
 const codeBlockStatus = {};
