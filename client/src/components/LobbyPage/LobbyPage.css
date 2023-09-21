@@ -1,0 +1,19 @@
+/* LobbyPage.css */
+.code-block-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Responsive grid with minimum column width of 200px */
+    gap: 20px; /* Adjust the gap between code blocks */
+  }
+  
+  .code-block {
+    border: 1px solid #ccc;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    color: #333;
+  }
+  
+  .code-block:hover {
+    background-color: #f0f0f0;
+  }
+  

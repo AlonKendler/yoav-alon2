@@ -1,0 +1,19 @@
+# Node.js Dependencies
+node_modules/
+npm-debug.log
+
+# Build Folders
+build/
+dist/
+coverage/
+
+# Environment variables
+.env.local
+.env.development
+.env.test
+.env.production
+
+# Miscellaneous
+.DS_Store
+Thumbs.db
+.vercel

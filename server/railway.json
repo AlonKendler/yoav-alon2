@@ -1,0 +1,18 @@
+{
+    "name": "code-practice-web-app-server",
+    "environments": {
+      "production": "CodePracticeWebApp",
+      "staging": "1e324504-c39e-4ae5-b9fe-fe6ba91515a4"
+    },
+    "services": {
+      "express-server": {
+        "buildCommand": "npm install && npm run build",
+        "startCommand": "npm start",
+        "env": {
+          "NODE_ENV": "production",
+          "PORT": "$PORT"
+        }
+      }
+    }
+  }
+  
